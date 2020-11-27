@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Datos Preliminares
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,48 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Calculadora Arribadas</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <div id="div-inputs">
+
+    <ion-item>
+      <ion-label position="floating" >Transecto Inicial (1 - 60)</ion-label>
+      <ion-input  id="transecto-inicial" [(ngModel)]="transectoInicial" type="number" min=1 max=75></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Transecto Final (1 - 60)</ion-label>
+      <ion-input id="transecto-final" [(ngModel)]="transectoFinal" type="number" min=1 max=75></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hora Inicial (00 - 23)</ion-label>
+      <ion-input id="hora-inicial" [(ngModel)]="horaInicial" type="number" min=0 max=24></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hora Final (00 - 23)</ion-label>
+      <ion-input id="hora-final" [(ngModel)]="horaFinal" type="number" min=0 max=24></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de Tortugas</ion-label>
+      <ion-input id="numero-tortugas" [(ngModel)]="numeroTortugas" type="number" min=0></ion-input>
+    </ion-item>
+
+    </div>
+
+    <div id="div-buttons">
+    <ion-button id="boton-calcular" expand="block" fill="outline" (click)="basicAlert()" >Calcular</ion-button>
+    <ion-button id="boton-borrar" expand="block" fill="outline" onclick= 
+    "document.getElementById('transecto-inicial').value = '';
+     document.getElementById('transecto-final').value = '';
+     document.getElementById('hora-inicial').value = '';
+     document.getElementById('hora-final').value = '';
+     document.getElementById('numero-tortugas').value = '';">Borrar</ion-button>
+    <ion-button id="boton-salir" expand="block" fill="outline" (click)="closeApp()">Salir</ion-button>
+    </div>
+
 </ion-content>
