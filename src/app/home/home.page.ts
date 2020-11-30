@@ -83,10 +83,10 @@ export class HomePage {
           "Periodos muestreo: "+ca.getPeriodosMuestreo()+
         "</li>"+
         "<li>"+
-          "Periodos muestreo: "+ca.getSumaLongitudes()+"m"+
+          "Long. Transectos: "+ca.getSumaLongitudes()+" m"+
         "</li>"+
         "<li>"+
-          "Total tortugas: "+ca.getTotalTortugas()+
+          "Anidaciones: "+ca.getTotalTortugas()+
         "</li>";
         }
     }
